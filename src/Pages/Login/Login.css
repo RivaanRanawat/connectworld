@@ -1,3 +1,6 @@
+*{
+  margin: 0;
+}
 .appnamebutton{
 background-color: rgb(10, 65, 50);
 border: none;
@@ -79,14 +82,14 @@ margin-top: 10px;
   opacity: 1;
   right: 0;
 }
-.CenterAliningItems{
+.CenterAligningItems{
   align-items: center;
   display: flex;
   justify-content: center;
     margin-bottom: 10px;
   }
   
-.button1 {
+.loginButton {
     border-radius: 4px;
     width: 300px;
     transition: all 0.5s;
