@@ -17,8 +17,6 @@
 .body {
     display: flex;
     flex-direction: row;
-  
- 
 }
 
 .viewLoading {
@@ -109,7 +107,7 @@
     border-radius: 4px;
     cursor: pointer;
 }
-.notificationpragraph{
+.notificationparagraph{
     right:0;
     bottom:0;
 }
@@ -131,24 +129,25 @@
     cursor: pointer;
 }
 
-.viewListUser {
+.userViewList {
     overflow-y: scroll;
     max-height: 100vh;
     min-height: 90vh;
     height: auto;
+    width: 40vh;
    
 }
 
-.viewListUser::-webkit-scrollbar-track {
+.userViewList::-webkit-scrollbar-track {
     padding: 2px 0;
     background-color: #ffffff;
 }
 
-.viewListUser::-webkit-scrollbar {
+.userViewList::-webkit-scrollbar {
     width: 6px;
 }
 
-.viewListUser::-webkit-scrollbar-thumb {
+.userViewList::-webkit-scrollbar-thumb {
     border-radius: 10px;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #9999;
