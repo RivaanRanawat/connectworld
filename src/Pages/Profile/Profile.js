@@ -118,7 +118,7 @@ export default class Profile extends React.Component {
                 />
                 <div>
                     <button className="btnUpdate" onClick={this.uploadAvatar}>SAVE</button>
-                    <button className="btnBack" onClick={()=> {this.props.history.push("/chat")}}>SAVE</button>
+                    <button className="btnBack" onClick={()=> {this.props.history.push("/chat")}}>BACK</button>
                 </div>
                 {this.state.loading?(
                     <div>

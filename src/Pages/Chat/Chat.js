@@ -2,7 +2,10 @@ import React from 'react'
 import LoginString from '../Login/LoginStrings';
 import firebase from "../../Services/firebase";
 import "./Chat.css";
+import ChatBox from "../ChatBox/ChatBox";
+import WelcomeBoard from "../Welcome/Welcome";
 import ReactLoading from "react-loading";
+import {FaSistrix} from "react-icons/fa"
 
 export default class Chat extends React.Component {
     constructor(props) {
@@ -139,7 +142,56 @@ export default class Chat extends React.Component {
                     viewListUser.push(
                         <button id={item.key}
                         className={classname}
-                        onclick={() => {this.notificationErase(item.id)
+                        onClick={() => {this.notificationErase(item.id)
+                        this.setState({currentUser: item})
+                        document.getElementById(item.key).style.backgroundColor = "#fff"
+                        document.getElementById(item.key).style.color="#fff"
+                        }}>
+                            <img className="viewAvatarItem" src={item.URL} alt=""/>
+                            <div className="viewWrapContentItem">
+                                <span className="textItem">
+                                    {item.name}
+                                </span>
+                            </div>
+                            {classname === "viewWrapItemNotification"?
+                            <div className='notificationparagraph'>
+                                <p id={item.key} className="newmessages">New Messages</p>
+                            </div>: null}
+                            
+                        </button>
+                    )
+                }
+            })
+            this.setState({
+                displayedContacts: viewListUser
+            })
+        } else {
+            console.log("No User Detected");
+        }
+    }
+
+    onSearchHandler = (event) => {
+        let searchQuery = event.target.value.toLowerCase(),
+        displayedContacts = this.searchUsers.filter((el) => {
+            let SearchValue = el.name.toLowerCase();
+            return SearchValue.indexOf(searchQuery) !== -1;
+        })
+
+        this.displayedContacts = displayedContacts
+        this.displaySeacrhedContacts()
+    }
+
+    displaySeacrhedContacts = () => {
+        if(this.searchUsers.length> 0) {
+            let viewListUser = [];
+            let classname = "";
+            this.displayedContacts.map((item) => {
+                if(item.id !== this.currentUserid) {
+                    classname = this.getClassNameOfUser(item.id)
+                    viewListUser.push(
+                        <button id={item.key}
+                        className={classname}
+                        onClick={() => {this.notificationErase(item.id)
                         this.setState({currentUser: item})
                         document.getElementById(item.key).style.backgroundColor = "#fff"
                         document.getElementById(item.key).style.color="#fff"
@@ -176,7 +228,19 @@ export default class Chat extends React.Component {
                             <img className="ProfilePicture" alt="" src={this.currentUserPhoto} onClick={this.onProfileClick}/>
                             <button className="Logout" onClick={this.logout}>Log out</button>
                         </div>
+                        <div className="rootsearchbar">
+                            <div className="input-container">
+                                <input className="input-field" type="text" onChange={this.onSearchHandler} placeholder="Search"/>
+                            </div>
+                        </div>
                         {this.state.displayedContacts}
+                    </div>
+                    <div className="viewBoard">
+                        {this.state.currentUser? (
+                            <ChatBox/>
+                        ): (
+                            <WelcomeBoard currentUserName={this.currentUserName} currentUserPhoto={this.currentUserPhoto}/>
+                        )}
                     </div>
                 </div>
             </div>
