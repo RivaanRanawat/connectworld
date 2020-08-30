@@ -379,14 +379,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
                                     <div className="viewItemLeft3" key={item.timestamp}>
                                         <img
                                         className="imgItemRight"
-                                        src={item.content}
+                                        src={this.getGifImage(item.content)}
                                         alt="Update Your Image"/>
                                     </div>
                                 </div>
                                 {this.isLastMessageLeft(index)? (
                                      <span className="textTimeLeft">
                                          <div className="time">
-                                             {moment(Number(item.timestamp)).format('11/2')}
+                                             {moment(Number(item.timestamp)).format()}
                                          </div>
                                      </span>
                                  ): null}
