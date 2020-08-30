@@ -4,15 +4,13 @@ import firebase from "../../Services/firebase";
 
 import LoginString from "../Login/LoginStrings";
 import "./Login.css";
-import {Card} from "react-bootstrap";
-import {Avatar, CssBaseline, TextField, FormControlLabel, Checkbox, Grid, LockOutlinedIcon, Typography} from "@material-ui/core";
+import {CssBaseline, TextField, FormControlLabel, Checkbox, Grid, Typography} from "@material-ui/core";
 
 export default class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
             isLoading: true,
-            error: "",
             email: "",
             password: ""
         }
@@ -30,7 +28,6 @@ export default class Login extends Component {
     componentDidMount() {
         {/* if logged in, push details to chat */}
         if(localStorage.getItem(LoginString.ID)) {
-            console.log("hii")
             this.setState({isLoading: false}, () => {
                 this.setState({isLoading: false})
                 this.props.showToast(1, "Login Success")
@@ -43,7 +40,6 @@ export default class Login extends Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        this.setState({error: ""});
         await firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
         .then(async result=>{
             let user = result.user;
@@ -67,9 +63,7 @@ export default class Login extends Component {
 
             this.props.history.push('./chat');
         }).catch(function(err) {
-            this.setState({
-                error: "There was an error while logging in"
-            })
+            document.getElementById("1").innerHTML = "Incorrect Email or Password."
         })
     }
 
@@ -160,6 +154,9 @@ export default class Login extends Component {
                                     <Link to="/signup" variant="body2">
                                         Sign up
                                     </Link>
+                                </div>
+                                <div className="error">
+                                    <p id='1' style={{color: 'red'}}></p>
                                 </div>
                         </form>
                     </div>

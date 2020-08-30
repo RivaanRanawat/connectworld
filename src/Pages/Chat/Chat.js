@@ -237,7 +237,7 @@ export default class Chat extends React.Component {
                     </div>
                     <div className="viewBoard">
                         {this.state.currentUser? (
-                            <ChatBox/>
+                            <ChatBox currentUser={this.state.currentUser} showToast={this.props.showToast}/>
                         ): (
                             <WelcomeBoard currentUserName={this.currentUserName} currentUserPhoto={this.currentUserPhoto}/>
                         )}
