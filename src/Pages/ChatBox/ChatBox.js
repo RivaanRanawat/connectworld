@@ -470,6 +470,69 @@ import "bootstrap/dist/css/bootstrap.min.css";
                  alt="stickers" 
                  onClick={()=> {this.onSendMessage("teddy9", 2)}}
                  />
+
+                <img 
+                 className="imgSticker" 
+                 src={images.teddy10} 
+                 alt="stickers" 
+                 onClick={()=> {this.onSendMessage("teddy10", 2)}}
+                 />
+
+                <img 
+                 className="imgSticker" 
+                 src={images.teddy11} 
+                 alt="stickers" 
+                 onClick={()=> {this.onSendMessage("teddy11", 2)}}
+                 />
+                 
+                 <img 
+                 className="imgSticker" 
+                 src={images.teddy12} 
+                 alt="stickers" 
+                 onClick={()=> {this.onSendMessage("teddy12", 2)}}
+                 />
+
+                <img 
+                 className="imgSticker" 
+                 src={images.teddy13} 
+                 alt="stickers" 
+                 onClick={()=> {this.onSendMessage("teddy13", 2)}}
+                 />
+                 
+                 <img 
+                 className="imgSticker" 
+                 src={images.teddy14} 
+                 alt="stickers" 
+                 onClick={()=> {this.onSendMessage("teddy14", 2)}}
+                 />
+
+                <img 
+                 className="imgSticker" 
+                 src={images.teddy15} 
+                 alt="stickers" 
+                 onClick={()=> {this.onSendMessage("teddy15", 2)}}
+                 />
+                 
+                 <img 
+                 className="imgSticker" 
+                 src={images.teddy16} 
+                 alt="stickers" 
+                 onClick={()=> {this.onSendMessage("teddy16", 2)}}
+                 />
+
+                <img 
+                 className="imgSticker" 
+                 src={images.teddy17} 
+                 alt="stickers" 
+                 onClick={()=> {this.onSendMessage("teddy17", 2)}}
+                 />
+
+                <img 
+                 className="imgSticker" 
+                 src={images.teddy18} 
+                 alt="stickers" 
+                 onClick={()=> {this.onSendMessage("teddy18", 2)}}
+                 />
              </div>
          )
         }

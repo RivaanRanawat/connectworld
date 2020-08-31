@@ -13,7 +13,16 @@ const Images = {
     teddy6: require("../images/teddy6.gif"),
     teddy7: require("../images/teddy7.gif"),
     teddy8: require("../images/teddy8.gif"),
-    teddy9: require("../images/teddy9.gif")
+    teddy9: require("../images/teddy9.gif"),
+    teddy10: require("../images/teddy10.gif"),
+    teddy11: require("../images/teddy11.gif"),
+    teddy12: require("../images/teddy12.gif"),
+    teddy13: require("../images/teddy13.gif"),
+    teddy14: require("../images/teddy14.gif"),
+    teddy15: require("../images/teddy15.gif"),
+    teddy16: require("../images/teddy16.gif"),
+    teddy17: require("../images/teddy17.gif"),
+    teddy18: require("../images/teddy18.gif")
 
 }
 
